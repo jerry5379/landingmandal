@@ -1,0 +1,166 @@
+$font-bold: "bebas_neuebold", "Arial", sans-serif;
+$font-text: 'Montserrat', sans-serif;
+
+body, html {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: $font-bold;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #FBB600, #DA5900);
+  background-size: 200% 200%;
+  animation: gradientBackground 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  overflow: hidden;
+}
+
+.heading-container {
+  position: absolute;
+  top: 30px; /* Adjust top position for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds space between logo and name */
+  z-index: 20; /* Ensure it stays on top */
+  width: 100%;
+}
+
+.logo {
+  width: 150px; /* Adjusted logo size */
+  height: 150px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image doesn't get distorted */
+  }
+}
+
+.name {
+  font-size: 3.5em; /* Make the name large for emphasis */
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7); /* Adds a shadow to make it stand out */
+  text-align: center;
+  z-index: 20; /* Ensure it's on top */
+}
+
+/* Circle Container for the rotating background */
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  animation: bounce 3s ease-in-out infinite; /* Add bounce animation */
+}
+
+.circle {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Prevents text from being cut off by rotating circle */
+}
+
+.circle-background {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#FBB600, #DA5900, #FBB600); /* Gradient for circle */
+  position: absolute;
+  animation: rotateCircle 5s linear infinite; /* Rotate background only */
+}
+
+.circle-text {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0;
+  font-family: $font-bold;
+  position: relative;
+  z-index: 5; /* Ensure text is above the rotating background */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for depth */
+  
+  /* Animation for the circle text */
+  animation: fadeInScaleUp 2s ease-out forwards, textGlow 3s ease-in-out infinite;
+}
+
+/* Smooth animated gradient background */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Circle rotation animation - applies only to the circle's background */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade in and scale up animation for circle text */
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glowing text effect */
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Bounce animation for circle container */
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Start at the normal position */
+  }
+  50% {
+    transform: translateY(50px); /* Move down 50px */
+  }
+  100% {
+    transform: translateY(0); /* Return to the normal position */
+  }
+}
