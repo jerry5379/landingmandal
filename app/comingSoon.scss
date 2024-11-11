@@ -37,6 +37,7 @@ section {
   gap: 20px; /* Adds space between logo and name */
   z-index: 20; /* Ensure it stays on top */
   width: 100%;
+  padding: 0 20px;
 }
 
 .logo {
@@ -164,3 +165,81 @@ section {
     transform: translateY(0); /* Return to the normal position */
   }
 }
+
+/* Media Queries for responsiveness */
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .heading-container {
+    top: 20px;
+    gap: 10px;
+  }
+
+  .name {
+    font-size: 2.5em;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle {
+    width: 400px;
+    height: 400px;
+  }
+
+  .circle-text {
+    font-size: 2em;
+  }
+}
+
+/* For smaller devices (portrait phones) */
+@media (max-width: 480px) {
+  .heading-container {
+    top: 10px;
+    gap: 5px;
+  }
+
+  .name {
+    font-size: 1.8em;
+    letter-spacing: 0;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .circle-text {
+    font-size: 1.5em;
+  }
+}
+
+/* For very small screens (e.g., smaller phones in portrait mode) */
+@media (max-width: 375px) {
+  .name {
+    font-size: 1.5em;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .circle-text {
+    font-size: 1.2em;
+  }
+}
+
