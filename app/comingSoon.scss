@@ -53,9 +53,9 @@ section {
 .name {
   font-size: 3.5em; /* Make the name large for emphasis */
   font-weight: bold;
-  color: white;
+  color: #4b0f03;
   letter-spacing: 2px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7); /* Adds a shadow to make it stand out */
+  text-shadow: 0 3px 10px rgba(255, 255, 255, 0.7); /* Adds a shadow to make it stand out */
   text-align: center;
   z-index: 20; /* Ensure it's on top */
 }
@@ -92,17 +92,20 @@ section {
 
 .circle-text {
   font-size: 3em;
-  color: white;
+  color: transparent;
+  background:#520e00;
+  -webkit-background-clip: text;
+  background-clip: text;
   text-align: center;
   letter-spacing: 2px;
   margin: 0;
-  font-family: $font-bold;
+  font-family: var(--font-geist-sans);
   position: relative;
-  z-index: 5; /* Ensure text is above the rotating background */
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow for depth */
+  z-index: 5;
+  text-shadow: 0 2px 5px rgba(108, 4, 4, 0.63);
   
   /* Animation for the circle text */
-  animation: fadeInScaleUp 2s ease-out forwards, textGlow 3s ease-in-out infinite;
+  animation: fadeInScaleUp 2s ease-out forwards,  ease-in-out infinite;
 }
 
 /* Smooth animated gradient background */
