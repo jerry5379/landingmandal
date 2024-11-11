@@ -20,7 +20,7 @@ export default function Home() {
       <div className="circle-container">
         <div className="circle">
           <div className="circle-background"></div>
-          <h1 className="circle-text">लवकर येच येत आहे आपल्या भेटीला</h1> {/* Animated Text */}
+          <h1 className="circle-text">लवकरच येत आहे आपल्या भेटीला</h1> {/* Animated Text */}
         </div>
       </div>
     </section>
